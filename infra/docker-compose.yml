@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  ml-service:
+    build:
+      context: ../ml-service-python
+      dockerfile: Dockerfile
+    container_name: brains_ml
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../ml-service-python/data:/app/data
+    environment:
+      - SBERT_MODEL=all-mpnet-base-v2
+
+  backend:
+    build:
+      context: ../backend-nestjs
+      dockerfile: Dockerfile
+    container_name: brains_backend
+    ports:
+      - "4000:4000"
+    environment:
+      - ML_SERVICE_URL=http://ml-service:8000
+    depends_on:
+      - ml-service
+
+  frontend:
+    build:
+      context: ../frontend-nextjs
+      dockerfile: Dockerfile
+    container_name: brains_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - BACKEND_URL=http://backend:4000
+    depends_on:
+      - backend

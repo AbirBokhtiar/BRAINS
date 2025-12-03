@@ -1,0 +1,82 @@
+[
+  {
+    "id": 101,
+    "domain": "neurology",
+    "disease": "alzheimers",
+    "age": 74,
+    "symptoms": [
+      "memory loss",
+      "confusion"
+    ],
+    "diagnosis": "Alzheimer's Disease",
+    "text": "Domain: Neurology. Subdomain: alzheimers. CaseID 101. Age 74. Symptoms: Memory loss, confusion. Diagnosis: Alzheimer's Disease."
+  },
+  {
+    "id": 102,
+    "domain": "neurology",
+    "disease": "frontotemporal_dementia",
+    "age": 65,
+    "symptoms": [
+      "difficulty speaking",
+      "motor issues"
+    ],
+    "diagnosis": "Frontotemporal Dementia",
+    "text": "Domain: Neurology. Subdomain: frontotemporal_dementia. CaseID 102. Age 65. Symptoms: Difficulty speaking, motor issues. Diagnosis: Frontotemporal Dementia."
+  },
+  {
+    "id": 103,
+    "domain": "cardiology",
+    "disease": "heart_failure",
+    "symptoms": [
+      "shortness of breath",
+      "edema"
+    ],
+    "diagnosis": "CHF",
+    "text": "Domain: Cardiology. Subdomain: heart_failure. Symptoms: Shortness of breath, edema. Diagnosis: CHF."
+  },
+  {
+    "id": 104,
+    "domain": "neurology",
+    "disease": "migraine",
+    "symptoms": [
+      "headache",
+      "light sensitivity"
+    ],
+    "diagnosis": "Migraine",
+    "text": "Domain: Neurology. Subdomain: migraine. Symptoms: Headache, light sensitivity. Diagnosis: Migraine."
+  },
+  {
+    "id": 105,
+    "domain": "neurology",
+    "disease": "alzheimers",
+    "symptoms": [
+      "progressive short-term memory loss",
+      "disorientation"
+    ],
+    "diagnosis": "Early Stage Alzheimer's",
+    "text": "Domain: Neurology. Subdomain: alzheimers. Symptoms: progressive short-term memory loss, disorientation. Diagnosis: Early Stage Alzheimer's."
+  },
+  {
+    "id": 106,
+    "domain": "pulmonology",
+    "disease": "copd",
+    "symptoms": [
+      "persistent cough",
+      "shortness of breath"
+    ],
+    "diagnosis": "COPD",
+    "text": "Domain: Pulmonology. Subdomain: copd. Symptoms: persistent cough, shortness of breath. Diagnosis: COPD."
+  },
+  {
+    "id": 107,
+    "domain": "cardiology",
+    "disease": "heart_failure",
+    "age": 68,
+    "symptoms": [
+      "fatigue",
+      "swollen ankles"
+    ],
+    "diagnosis": "Chronic Heart Failure",
+    "text": "Domain: Cardiology. Subdomain: heart_failure. Age 68. Symptoms: fatigue, swollen ankles. Diagnosis: Chronic Heart Failure."
+  }
+]
