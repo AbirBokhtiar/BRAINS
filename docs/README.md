@@ -773,9 +773,9 @@ MIT License — see LICENSE file for details.
 ## Support & Contact
 
 For issues, questions, or feature requests:
-- **Email:** support@example.com
+- **Email:** abirbokhtiar107@gmail.com
 - **Issues:** GitHub Issues
-- **Documentation:** [Full Wiki](./docs/FULL_DOCUMENTATION.md)
+- **Documentation:** [Full Wiki](./docs/FULL_DOCUMENTATION.md) - will be uploaded soon
 
 ---
 
