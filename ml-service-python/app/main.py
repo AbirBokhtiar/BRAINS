@@ -419,49 +419,49 @@ async def retrieve(request: Request):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.post("/api/ml/diagnose")
-async def diagnose(patient: PatientInput):
-    """
-    Multi-agent diagnosis endpoint.
-    Routes patient to appropriate domain → disease agent.
-    Each agent performs RAG + LLM inference.
-    """
-    try:
-        patient_dict = patient.dict()
-        print(f"\n[DEBUG] Patient Input: {patient_dict}")
+# @app.post("/api/ml/diagnose")
+# async def diagnose(patient: PatientInput):
+#     """
+#     Multi-agent diagnosis endpoint.
+#     Routes patient to appropriate domain → disease agent.
+#     Each agent performs RAG + LLM inference.
+#     """
+#     try:
+#         patient_dict = patient.dict()
+#         print(f"\n[DEBUG] Patient Input: {patient_dict}")
         
-        # Convert symptoms to list if string (handle both formats)
-        if isinstance(patient_dict.get('symptoms'), str):
-            symptoms_list = [s.strip() for s in patient_dict['symptoms'].split(',') if s.strip()]
-        elif isinstance(patient_dict.get('symptoms'), list):
-            symptoms_list = patient_dict['symptoms']
-        else:
-            symptoms_list = []
+#         # Convert symptoms to list if string (handle both formats)
+#         if isinstance(patient_dict.get('symptoms'), str):
+#             symptoms_list = [s.strip() for s in patient_dict['symptoms'].split(',') if s.strip()]
+#         elif isinstance(patient_dict.get('symptoms'), list):
+#             symptoms_list = patient_dict['symptoms']
+#         else:
+#             symptoms_list = []
         
-        # Update dict with normalized symptoms list
-        patient_dict['symptoms'] = symptoms_list
+#         # Update dict with normalized symptoms list
+#         patient_dict['symptoms'] = symptoms_list
         
-        # Use orchestrator to route and diagnose
-        result = rag_query_with_orchestrator(patient_dict, k=3)
+#         # Use orchestrator to route and diagnose
+#         result = rag_query_with_orchestrator(patient_dict, k=3)
         
-        print(f"\n[DEBUG] Diagnosis Result: {result}")
+#         print(f"\n[DEBUG] Diagnosis Result: {result}")
         
-        return {
-            "domain": result.get("domain"),
-            "agent": result.get("agent"),
-            "diagnosis": result.get("diagnosis"),
-            "rationale": result.get("rationale"),
-            "retrieved": result.get("retrieved", []),
-            "scores": result.get("scores", []),
-            "confidence": result.get("confidence", 0)
-        }
+#         return {
+#             "domain": result.get("domain"),
+#             "agent": result.get("agent"),
+#             "diagnosis": result.get("diagnosis"),
+#             "rationale": result.get("rationale"),
+#             "retrieved": result.get("retrieved", []),
+#             "scores": result.get("scores", []),
+#             "confidence": result.get("confidence", 0)
+#         }
     
-    except Exception as e:
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print("DIAGNOSE CRASH DETECTED:")
-        traceback.print_exc()
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        raise HTTPException(status_code=500, detail=str(e))
+#     except Exception as e:
+#         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+#         print("DIAGNOSE CRASH DETECTED:")
+#         traceback.print_exc()
+#         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+#         raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.post("/api/ml/diagnose/{domain}")
