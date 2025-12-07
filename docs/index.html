@@ -12,6 +12,27 @@
   
   <!-- Custom CSS for Medical/AI Vibe -->
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: #0b1015;
+    }
+
+    #app {
+      min-height: 100vh;
+      width: 100%;
+    }
+
     :root {
       --base-font-size: 16px;
       --theme-color: #00d2ff; /* Cyan for AI/Future feel */
@@ -42,12 +63,27 @@
         color: #00d2ff;
     }
 
-    /* Minimal fix: Ensure content is visible and scrollable */
-    section.cover {
+    /* Docsify cover page fix */
+    .cover {
+      height: auto;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    .cover.hide {
+      display: none;
+    }
+
+    /* Content visibility fix */
+    .markdown-section {
+      padding: 40px 20px;
+    }
+
+    /* Ensure page content is visible and scrollable */
+    main {
+      display: block;
+      width: 100%;
     }
   </style>
 </head>
