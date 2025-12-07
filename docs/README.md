@@ -777,7 +777,11 @@ MIT License — see LICENSE file for details.
 For issues, questions, or feature requests:
 - **Email:** abirbokhtiar107@gmail.com
 - **Issues:** GitHub Issues
+<<<<<<< HEAD
 - **Documentation:** [Full Wiki](https://abirbokhtiar.github.io/BRAINS/docs/) - will be uploaded soon
+=======
+- **Documentation:** [Developer's Guide](https://abirbokhtiar.github.io/BRAINS/) - will be uploaded soon
+>>>>>>> 53f0cbe891c8619c31f903c84cd7f9868af6cf2b
 
 ---
 
