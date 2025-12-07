@@ -7,7 +7,7 @@
 
 **BRAINS** is a production-ready, multi-agent medical diagnostic platform powered by **Retrieval-Augmented Generation (RAG)** and **LLM inference**. It combines a Next.js frontend, NestJS backend, and Python ML service to provide domain-specific medical diagnosis with semantic search and conversational chat capabilities.
 
-Explore pages - ![BRAINS](https://abirbokhtiar.github.io/BRAINS/)
+Explore pages - [BRAINS](https://abirbokhtiar.github.io/BRAINS/)
 
 ## Table of Contents
 
