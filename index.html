@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRAINS Platform — Multi-Agent Medical AI</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0f24, #141b3a);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Smooth Fade Animations */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.2s forwards;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 120px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #4fc3f7, #a18cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      opacity: 0.85;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .buttons {
+      margin-top: 40px;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      margin: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: white;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #5a7bff, #8f34ff);
+      box-shadow: 0 8px 24px rgba(138, 88, 255, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    /* Features */
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 1050px;
+      margin: 40px auto 0;
+    }
+
+    .card {
+      padding: 25px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 80px;
+      padding: 30px;
+      text-align: center;
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <section class="hero fade-in">
+    <h1>BRAINS Medical AI Platform</h1>
+    <p>
+      A Multi-Agent Diagnostic Intelligence System powered by LLM inference,
+      agent collaboration, and Retrieval-Augmented Generation.  
+      Designed for real clinical workflows and research innovation.
+    </p>
+
+    <div class="buttons">
+      <a href="docs/index.html"><button class="btn btn-primary">Developer Docs</button></a>
+      <a href="site/index.html"><button class="btn btn-glass">Project Website</button></a>
+      <a href="research/index.html"><button class="btn btn-glass">Research Paper</button></a>
+      <a href="https://github.com/eliteresearchlab/BRAINS"><button class="btn btn-glass">GitHub Repo</button></a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section fade-in">
+    <h2>Core Features</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>🧠 Multi-Agent Diagnostics</h3>
+        <p>Domain-specialized medical agents collaborate to provide accurate reasoning and decision-making.</p>
+      </div>
+
+      <div class="card">
+        <h3>📚 RAG-Enhanced Inference</h3>
+        <p>Retrieves validated clinical literature, guidelines, and structured datasets for grounded outputs.</p>
+      </div>
+
+      <div class="card">
+        <h3>🏥 Multi-Domain Coverage</h3>
+        <p>Neurology, Cardiology, Pulmonology, Oncology and beyond — extendable to any medical specialty.</p>
+      </div>
+
+      <div class="card">
+        <h3>⚡ Modular Architecture</h3>
+        <p>Built with clean APIs for Python ML pipeline, NestJS backend, and plug-and-play agent modules.</p>
+      </div>
+
+      <div class="card">
+        <h3>🔍 High Explainability</h3>
+        <p>Transparent chain-of-thought reasoning, citations, RAG context visibility, and decision logs.</p>
+      </div>
+
+      <div class="card">
+        <h3>📈 Research-Ready</h3>
+        <p>Designed for paper publication, benchmarking, ablation studies, and reproducible experimentation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 BRAINS Platform · Built for advanced medical AI diagnostics.
+  </footer>
+
+</body>
+</html>
