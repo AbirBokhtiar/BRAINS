@@ -13,6 +13,7 @@ from openai import OpenAI
 from sentence_transformers import SentenceTransformer
 import faiss
 from pathlib import Path
+import numpy as np
 
 # Import confidence scorer - with fallback
 try:
@@ -24,7 +25,64 @@ except Exception as e:
     def calculate_final_confidence(*args, **kwargs):
         return 50  # Default confidence
 
-embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+# embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+# --- FIX START ---
+from google import genai
+
+# 1. Rename to 'gemini_client' to avoid conflict with OpenAI 'client'
+gemini_client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+
+def get_gemini_embedding(text: str) -> list[float]:
+    """
+    Generate embeddings using Gemini API via google-genai.
+    """
+    try:
+        # 2. Update model to a valid path (often 'models/' prefix is safer)
+        # 3. Use 'gemini_client' here
+        response = gemini_client.models.embed_content(
+            model="models/text-embedding-004", # Updated to latest stable model
+            contents=[text]
+        )
+        # 4. Handle response structure safely
+        if response.embeddings:
+            return response.embeddings[0].values
+        else:
+            raise ValueError("No embedding returned from Gemini API")
+            
+    except AttributeError:
+        # Fallback for different SDK versions returning object vs dict
+        return response.embeddings[0]
+    except Exception as e:
+        print(f"[ERROR] Gemini Embedding Failed: {e}")
+        # Fallback to zero vector to prevent crash if API fails
+        return [0.0] * 768 
+
+# --- FIX END ---
+
+embedding_cache = {}
+
+def get_embedding_cached(text):
+    # Turn list input into a single key
+    key = " ".join(text) if isinstance(text, list) else str(text)
+
+    if key in embedding_cache:
+        return embedding_cache[key]
+
+    emb = get_gemini_embedding(key)
+    embedding_cache[key] = emb
+    return emb
+
+
+class EmbeddingModelWrapper:
+    def encode(self, texts, batch_size=32):
+        embeddings = []
+        for text in texts:
+            emb = get_embedding_cached(text)
+            embeddings.append(emb)
+        return np.array(embeddings, dtype="float32")
+    
+embedding_model = EmbeddingModelWrapper()
+
 faiss_index_path = Path("data/faiss.index")
 
 documents = []
