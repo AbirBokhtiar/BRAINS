@@ -13,7 +13,7 @@ ML-service -> https://brains-production.up.railway.app/
 
 Backend -> https://loyal-energy-production.up.railway.app/
 
-Frontend -> https://brains-pyh1jinkq-abir-bokhtiars-projects.vercel.app/
+Frontend -> https://brains-phi.vercel.app/
 
 ## Table of Contents
 
