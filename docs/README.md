@@ -9,6 +9,10 @@
 
 # Explore pages - [BRAINS](https://abirbokhtiar.github.io/BRAINS/)
 
+ML-service -> https://brains-production.up.railway.app/
+Backend -> https://loyal-energy-production.up.railway.app/
+Frontend -> https://brains-pyh1jinkq-abir-bokhtiars-projects.vercel.app/
+
 ## Table of Contents
 
 - [Quick Start](#quick-start)
