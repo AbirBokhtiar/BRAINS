@@ -1,0 +1,12 @@
+__pycache__/
+.env
+.git
+.gitignore
+node_modules/
+frontend/
+backend/
+data/
+models/
+*.pt
+*.ckpt
+*.bin
