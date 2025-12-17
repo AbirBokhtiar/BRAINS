@@ -1,56 +1,5 @@
 // // app/[domain]/[sub]/DiagnosisForm.tsx
 
-// 'use client'; // <-- Essential
-
-// import { useState } from 'react';
-// import { useRouter } from 'next/navigation';
-// import { postDiagnosis } from '@/app/lib/api';
-// import { PatientPayload } from '@/app/types';
-
-// interface Props {
-//   domain: string;
-//   sub: string;
-// }
-
-// // NOTE: Component name changed for clarity, and it receives simple props
-// export default function DiagnosisForm({ domain, sub }: Props) {
-//     // router, state, and handlers remain the same
-//     const router = useRouter();
-//     const [symptoms, setSymptoms] = useState('');
-//     const [image, setImage] = useState<File | null>(null);
-//     const [loading, setLoading] = useState(false);
-
-//     const toBase64 = (file: File) => new Promise<string>((resolve, reject) => {
-//         const reader = new FileReader();
-//         reader.readAsDataURL(file);
-//         reader.onload = () => resolve(reader.result as string);
-//         reader.onerror = reject;
-//     });
-
-//     const handleSubmit = async () => {
-//         setLoading(true);
-//         const payload: PatientPayload = { symptoms };
-//         if (image) payload.imageBase64 = await toBase64(image);
-//         try {
-//             const data = await postDiagnosis(domain, sub, payload);
-//             localStorage.setItem('diagnosis_result', JSON.stringify(data));
-//             router.push('/results');
-//         } catch (err) {
-//             alert((err as Error).message);
-//         } finally { setLoading(false); }
-//     };
-
-
-//     return (
-//         <div className="space-y-6 max-w-xl mx-auto">
-//             <h1 className="text-3xl font-bold mb-4 capitalize">{domain} / {sub.replace(/_/g, ' ')}</h1>
-//             <textarea className="w-full p-4 border rounded-xl" rows={10} placeholder="Enter patient symptoms..." value={symptoms} onChange={(e) => setSymptoms(e.target.value)} />
-//             <input className='w-60 p-1 border rounded' type="file" accept="image/*" onChange={(e) => setImage(e.target.files?.[0] ?? null)} />
-//             <button className="px-6 py-3 bg-sky-600 text-white rounded-xl" onClick={handleSubmit}>{loading ? 'Processing...' : 'Run Diagnosis'}</button>
-//         </div>
-//     );
-// }
-
 'use client';
 
 import { useState } from 'react';
