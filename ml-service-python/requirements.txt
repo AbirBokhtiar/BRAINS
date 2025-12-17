@@ -68,8 +68,8 @@ python-dotenv==1.0.1
 
 openai
 
-# faiss-cpu==1.8.0.post1
-faiss-cpu==1.13.1
+faiss-cpu>=1.9.0
+# faiss-cpu==1.13.1
 sentence-transformers==3.0.1
 numpy==1.26.4
 scikit-learn==1.5.1
