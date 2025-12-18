@@ -322,7 +322,7 @@ from openai import OpenAI
 import traceback
 
 from .schemas import PatientInput, RetrieveRequest
-from sentence_transformers import SentenceTransformer
+# from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
 
