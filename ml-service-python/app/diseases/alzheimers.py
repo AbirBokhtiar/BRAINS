@@ -16,7 +16,7 @@
 import os
 import json
 from openai import OpenAI
-from sentence_transformers import SentenceTransformer
+# from sentence_transformers import SentenceTransformer
 import faiss
 from pathlib import Path
 import numpy as np
