@@ -31,7 +31,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(req: NextRequest) {
   const body = await req.json();
   // forward to Nest backend
-  const res = await fetch(process.env.BACKEND_URL + '/agents/run', {
+  const res = await fetch(process.env.NEXT_PUBLIC_BACKEND_URL + '/agents/run', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
