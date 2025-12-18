@@ -9,11 +9,11 @@
 
 # Explore pages - [BRAINS](https://abirbokhtiar.github.io/BRAINS/)
 
-ML-service -> https://brains-production.up.railway.app/
+ML-service -> https://brains-ml-service-zliz.onrender.com
 
-Backend -> https://loyal-energy-production.up.railway.app/
+Backend -> https://brains-nestjs.onrender.com
 
-Frontend -> https://brains-phi.vercel.app/
+Frontend -> https://brains-eta.vercel.app/
 
 ## Table of Contents
 
