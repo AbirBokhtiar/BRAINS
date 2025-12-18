@@ -158,7 +158,3 @@ ml-service-python/.venv/**
 .venv/
 venv/
 venv*/
-
-# tsconfig.json generated files
-*.tsbuildinfo
-*.tsconfig
